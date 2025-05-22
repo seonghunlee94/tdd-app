@@ -45,7 +45,7 @@ it('GET /api/products/:productId', async () => {
 })
 
 it('GET id doenst exist /api/products/:productId', async () => {
-    const response = await request(app).get('/api/products/60d0fe4f5311236168a109c');
+    const response = await request(app).get('/api/products/680b9323399226fb8557da59');
         
     expect(response.statusCode).toBe(404);
         
