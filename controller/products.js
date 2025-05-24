@@ -48,3 +48,18 @@ exports.updateProduct = async (req, res, next) => {
     }
     
 }
+
+exports.deleteProduct = async (req, res, next) => {
+    try {
+
+        const deleteProduct = await productModel.findByIdAndDelete(req.params.productId);
+    
+        if (!deleteProduct) {
+            return res.status(404).send();
+        }  
+        res.status(200).json(deleteProduct);
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
